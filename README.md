@@ -889,8 +889,10 @@ alice.insert(doc, function (err, body, headers) {
 
 Getting current session:
 
+> `cookie` MUST be in the form of: "AuthSession=..."
+
 ```javascript
-var nano = require('nano')({url: 'http://localhost:5984', cookie: 'AuthSession=' + auth});
+var nano = require('nano')({url: 'http://localhost:5984', cookie: auth});
 
 nano.session(function(err, session) {
   if (err) {
